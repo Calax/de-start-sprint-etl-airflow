@@ -13,7 +13,7 @@ docker compose up airflow-init
 docker compose up -d airflow-webserver airflow-scheduler airflow-worker airflow-triggerer vsc
 ```
 
-тренажер доступен по адресу [http://localhost:7090](http://localhost:7090),
+тренажер доступен по адресу [http://localhost:7090](http://localhost:7090), там же папка dags в которой разместите даги.
 
 airflow по  [http://localhost:8080](http://localhost:8080),
 

@@ -58,7 +58,7 @@ services:
       PLAYGROUND_API: https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net
       AF_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       AF_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-      AF_ENDPOINT: http://airflow-webserver:8080
+      AF_ENDPOINT: http://airflow:8080
       X_API_KEY: 5f55e6c0-e9e5-4a9c-b313-63c01fc31460
       PG_LOGIN: student
       PG_PW: student-de

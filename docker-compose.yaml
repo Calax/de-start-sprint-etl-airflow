@@ -220,27 +220,6 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
-  metabase:
-    image: metabase/metabase:latest
-    ports:
-      - 13000:3000
-    environment:
-      MB_DB_TYPE: 'postgres'
-      MB_DB_DBNAME: 'metabaseappdb'
-      MB_DB_PORT: 5432
-      MB_DB_HOST: 'postgres'
-      MB_DB_USER: 'metabase'
-      MB_DB_PASS: 'metabase'
-    healthcheck:
-      test: curl --fail -I http://localhost:3000/api/health || exit 1
-      interval: 15s
-      timeout: 5s
-      retries: 5
-    restart: always
-    depends_on:
-      postgres:
-        condition: service_healthy
-
   vsc:
     image: cr.yandex/crp1r8pht0n0gl25aug1/vsc-checkers-etl:latest
     environment:
@@ -258,8 +237,10 @@ services:
     ports:
       - 7090:8000
     volumes:
+      - lessons:/lessons
       - airflow-dags:/lessons/dags
 
 volumes:
   postgres-db-volume:
   airflow-dags:
+  lessons: 
